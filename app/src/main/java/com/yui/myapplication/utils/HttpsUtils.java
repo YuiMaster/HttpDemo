@@ -22,8 +22,15 @@ import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
 /**
- * Created by Jane on 2018/1/22.
+ * https 工具类
+ *
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
  */
+
 
 public class HttpsUtils {
 
@@ -31,6 +38,7 @@ public class HttpsUtils {
         public SSLSocketFactory sSLSocketFactory;
         public X509TrustManager trustManager;
     }
+
     public static SSLParams getSslSocketFactory(InputStream[] certificates, InputStream bksFile, String password) {
         SSLParams sslParams = new SSLParams();
         try {
@@ -166,6 +174,7 @@ public class HttpsUtils {
             return new X509Certificate[0];
         }
     }
+
     private static class UnSafeTrustManager implements X509TrustManager {
         @Override
         public void checkClientTrusted(X509Certificate[] chain, String authType)

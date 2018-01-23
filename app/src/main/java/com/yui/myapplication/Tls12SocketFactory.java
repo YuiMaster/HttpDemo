@@ -8,10 +8,15 @@ import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 
 /**
- * author: heshantao
- * data: 2017/3/12.
  * 自定义SocketFactory 使得 Android4.x打开对TLS1.1、TLS1.2的支持
+ *
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
  */
+
 
 public class Tls12SocketFactory extends SSLSocketFactory {
     private static final String[] TLS_SUPPORT_VERSION = {"TLSv1.1", "TLSv1.2"};

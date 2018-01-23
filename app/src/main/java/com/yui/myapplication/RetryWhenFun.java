@@ -14,11 +14,17 @@ import rx.functions.Func2;
  */
 
 public class RetryWhenFun implements Func1<Observable<? extends Throwable>, Observable<?>> {
-    //    retry次数
+    /**
+     * retry次数
+     */
     private int count = 3;
-    //    延迟
+    /**
+     * 延迟
+     */
     private long delay = 3000;
-    //    叠加延迟
+    /**
+     * 叠加延迟
+     */
     private long increaseDelay = 3000;
 
     public RetryWhenFun() {
@@ -44,12 +50,21 @@ public class RetryWhenFun implements Func1<Observable<? extends Throwable>, Obse
                         return new Wrapper(throwable, integer);
                     }
                 }).flatMap(new Func1<Wrapper, Observable<?>>() {
+                    /**
+                     * @param wrapper
+                     *
+                     * @return
+                     */
                     @Override
                     public Observable<?> call(Wrapper wrapper) {
-                        if ((wrapper.throwable instanceof ConnectException
+                        /**异常类型：超时，连接错误*/
+                        boolean wrapperCheck = wrapper.throwable instanceof ConnectException
                                 || wrapper.throwable instanceof SocketTimeoutException
-                                || wrapper.throwable instanceof TimeoutException)
-                                && wrapper.index < count + 1) { //如果超出重试次数也抛出错误，否则默认是会进入onCompleted
+                                || wrapper.throwable instanceof TimeoutException;
+                        /**连接错误次数计数*/
+                        boolean indexCheck = wrapper.index < count + 1;
+                        if (wrapperCheck && indexCheck) {
+                            /**如果超出重试次数也抛出错误，否则默认是会进入onCompleted*/
                             return Observable.timer(delay + (wrapper.index - 1) * increaseDelay, TimeUnit.MILLISECONDS);
 
                         }
@@ -60,6 +75,9 @@ public class RetryWhenFun implements Func1<Observable<? extends Throwable>, Obse
 
     private class Wrapper {
         private int index;
+        /**
+         * 错误
+         */
         private Throwable throwable;
 
         public Wrapper(Throwable throwable, int index) {

@@ -2,11 +2,23 @@ package com.yui.myapplication.execption;
 
 /**
  * API 调用异常
- * Created by Jane on 2018/1/22.
+ *
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
  */
 
+
 public class ApiExecption extends RuntimeException {
+    /**
+     * 错误码
+     */
     public int code;
+    /**
+     * 错误内容
+     */
     public String msg;
 
     public ApiExecption(int code, String message) {

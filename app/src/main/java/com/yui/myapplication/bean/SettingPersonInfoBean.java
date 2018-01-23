@@ -3,9 +3,17 @@ package com.yui.myapplication.bean;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+
 /**
- * Created by Jane on 2018/1/22.
+ * 个人信息 bean
+ *
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
  */
+
 
 public class SettingPersonInfoBean implements Parcelable {
     private String trueName;

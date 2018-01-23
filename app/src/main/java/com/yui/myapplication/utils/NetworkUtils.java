@@ -11,8 +11,15 @@ import android.support.annotation.NonNull;
 import android.telephony.TelephonyManager;
 
 /**
- * Created by Jane on 2018/1/22.
+ * 网络工具类
+ *
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
  */
+
 public class NetworkUtils {
 
     public static final int NETWORK_WIFI = 1;    // wifi network
@@ -56,7 +63,13 @@ public class NetworkUtils {
         return info != null && info.isAvailable();
     }
 
-    //网络是否已连接
+    /**
+     * 网络是否已连接
+     *
+     * @param context
+     *
+     * @return
+     */
     public static boolean isConnected(@NonNull Context context) {
         ConnectivityManager connMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();

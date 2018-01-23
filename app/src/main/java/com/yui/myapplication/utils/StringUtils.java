@@ -5,10 +5,17 @@ import java.net.URLEncoder;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/*
- *Created by scott_he on 16/10/16.
+
+/**
  * 字符串统一管理类
- * */
+ *
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
+ */
+
 public class StringUtils {
     private StringUtils() {
         throw new AssertionError();
@@ -337,12 +344,20 @@ public class StringUtils {
         return isValid;
     }
 
-    // JPush校验Tag Alias 只能是数字,英文字母和中文
+
+    /**
+     * JPush校验Tag Alias 只能是数字,英文字母和中文
+     *
+     * @param s
+     *
+     * @return
+     */
     public static boolean isValidTagAndAlias(String s) {
-        Pattern p = Pattern.compile("^[\u4E00-\u9FA50-9a-zA-Z_-]{0,}$");
+        Pattern p = Pattern.compile(REGEX);
         Matcher m = p.matcher(s);
         return m.matches();
     }
+    static final String REGEX = "^[\u4E00-\u9FA50-9a-zA-Z_-]{0,}$";
 
     /**
      * 检查字符串是否存在值，如果为true,

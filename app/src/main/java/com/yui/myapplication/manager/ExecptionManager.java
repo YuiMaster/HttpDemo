@@ -16,18 +16,25 @@ import java.net.SocketTimeoutException;
 import retrofit2.adapter.rxjava.HttpException;
 
 /**
- * Created by Jane on 2018/1/22.
+ * 异常处理
+ *
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
  */
 
 public class ExecptionManager {
     private volatile static ExecptionManager INSTANCE;
     private final String TAG = this.getClass().getSimpleName();
 
-    //构造方法私有
     private ExecptionManager() {
     }
 
-    //获取单例
+    /**
+     * 获取单例
+     */
     public static ExecptionManager getInstance() {
         if (INSTANCE == null) {
             synchronized (ExecptionManager.class) {
@@ -39,32 +46,47 @@ public class ExecptionManager {
         return INSTANCE;
     }
 
-    //是否是网络异常
+    /**
+     * 是否是网络异常
+     *
+     * @param throwable
+     *
+     * @return
+     */
     public boolean isNetException(Throwable throwable) {
         if (throwable instanceof ConnectException) {
             return true;
         }
-
         if (throwable instanceof ConnectTimeoutException) {
             return true;
         }
 
         return throwable instanceof SocketTimeoutException;
-
     }
 
 
-    //是否是服务器异常
+    /**
+     * 是否是服务器异常
+     */
     public boolean isApiException(Throwable throwable) {
         return throwable instanceof ApiExecption;
     }
 
-    //是Http 请求异常
+    /**
+     * 是Http 请求异常
+     */
     public boolean isHttpException(Throwable throwable) {
         return throwable instanceof HttpException;
     }
 
 
+    /**
+     * 异常分类并进行 数据转化
+     *
+     * @param e
+     *
+     * @return
+     */
     public ResponseException handleException(Throwable e) {
         ResponseException ex;
         if (e instanceof HttpException) {

@@ -7,12 +7,18 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 
 /**
- * Created by scott_he on 2016/11/9.
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
  */
 
 public class AppUtils {
 
-    //获得app 版本名
+    /**
+     * 获得app 版本名
+     */
     public static String getVersionName(Context context) {
         String version = null;
         try {
@@ -26,9 +32,11 @@ public class AppUtils {
     }
 
 
-    //获得app 版本号
+    /**
+     * 获得app 版本号
+     */
     public static int getVersionCode(Context context) {
-        int versionCode =0;
+        int versionCode = 0;
         try {
             PackageManager packageManager = context.getPackageManager();
             PackageInfo packInfo = packageManager.getPackageInfo(context.getPackageName(), 0);
@@ -39,15 +47,18 @@ public class AppUtils {
         return versionCode;
     }
 
-
-    //获得app包名
+    /**
+     * 获得app包名
+     */
     public static String getAppPackgeName(Context context) {
         String appName = context.getPackageName();
         return appName;
     }
 
 
-    //判断apk 是否安装
+    /**
+     * 判断apk 是否安装
+     */
     public static boolean isApkInstalled(Context context, String packageName) {
         PackageManager packageManager = context.getPackageManager();
         try {
@@ -59,7 +70,9 @@ public class AppUtils {
     }
 
 
-    //安装apk
+    /**
+     * 安装app
+     */
     public static void installAPK(Context context, String apkPath) {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
@@ -69,6 +82,9 @@ public class AppUtils {
         context.startActivity(intent);
     }
 
+    /**
+     * 安装app
+     */
     public static void installApk(Context context, Uri apkPath) {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);

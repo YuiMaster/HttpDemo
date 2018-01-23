@@ -10,15 +10,28 @@ import java.lang.ref.SoftReference;
 import rx.Subscriber;
 
 /**
- * Created by Jane on 2018/1/22.
+ * Subscriber 封装实现类
+ * Subscriber：订阅者，预约者
+ *
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
  */
 
 public class RxSubscriber<T> extends Subscriber<T> {
-    /** 软引用回调接口*/
+    /**
+     * 软引用回调接口
+     */
     private SoftReference<HttpOnNextCallback> mSubscriberOnNextListener;
-    /**软引用反正内存泄露*/
+    /**
+     * 软引用反正内存泄露
+     */
     private SoftReference<LifecycleProvider> lifeProvide;
-    /**请求数据*/
+    /**
+     * 请求数据
+     */
     private BaseApi mApi;
 
     public RxSubscriber(BaseApi api) {
@@ -37,7 +50,7 @@ public class RxSubscriber<T> extends Subscriber<T> {
 
     @Override
     public void onCompleted() {
-        Log.w("lyh","onCompleted");
+        Log.w("lyh", "onCompleted");
         if (mSubscriberOnNextListener.get() != null) {
             mSubscriberOnNextListener.get().onComplete();
         }
@@ -46,7 +59,7 @@ public class RxSubscriber<T> extends Subscriber<T> {
     @Override
     public void onError(Throwable e) {
         doErro(e);
-        Log.w("lyh","onError");
+        Log.w("lyh", "onError");
     }
 
     /**
@@ -54,7 +67,7 @@ public class RxSubscriber<T> extends Subscriber<T> {
      */
     private void doErro(Throwable e) {
         Throwable mThrowable = e.getCause();
-        Log.w("lyh","doErro");
+        Log.w("lyh", "doErro");
         if (mSubscriberOnNextListener.get() != null) {
             mSubscriberOnNextListener.get().onError(mThrowable);
         }
@@ -62,7 +75,7 @@ public class RxSubscriber<T> extends Subscriber<T> {
 
     @Override
     public void onNext(T t) {
-        Log.w("lyh","onNext ");
+        Log.w("lyh", "onNext ");
         if (mSubscriberOnNextListener.get() != null) {
             mSubscriberOnNextListener.get().onNext(t);
         }

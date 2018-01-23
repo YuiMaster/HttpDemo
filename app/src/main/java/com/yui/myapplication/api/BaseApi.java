@@ -15,7 +15,13 @@ import rx.Observable;
 import rx.functions.Func1;
 
 /**
- * Created by Jane on 2018/1/22.
+ * 统一的请求类
+ *
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
  */
 
 public abstract class BaseApi<T> implements Func1<HttpResponseEntity<T>, T> {

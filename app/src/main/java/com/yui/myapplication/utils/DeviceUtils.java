@@ -8,38 +8,72 @@ import android.telephony.TelephonyManager;
 import java.util.UUID;
 
 /**
- * Created by Jane on 2018/1/22.
+ * 设备信息
+ *
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
  */
 
 public class DeviceUtils {
 
-    //获得SDK版本号
+    /**
+     * 获得SDK版本号
+     *
+     * @return
+     */
     public static String getOsVersion() {
         return String.valueOf(Build.VERSION.SDK_INT);
     }
 
-    //获得设备Id
+    /**
+     * 获得设备Id
+     *
+     * @param context
+     *
+     * @return
+     */
     public static String getDeviceId(Context context) {
         return Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
     }
 
-    //获得手机型号
+    /**
+     * 获得手机型号
+     *
+     * @return
+     */
     public static String getModel() {
         return Build.MODEL;
     }
 
-    //获得手机品牌
+    /**
+     * 获得手机品牌
+     *
+     * @return
+     */
     public static String getBrand() {
         return Build.BRAND;
     }
 
-    //设备类型
+    /**
+     * 设备类型
+     *
+     * @return
+     */
     public static String getDeviceType() {
         return "android";
     }
 
 
-    //获得uuid
+    /**
+     * 获得uuid
+     *
+     * @param context
+     *
+     * @return
+     */
     public static String getUUID(Context context) {
         TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         final String deviceId = telephonyManager.getDeviceId();

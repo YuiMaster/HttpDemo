@@ -16,6 +16,11 @@ import rx.Observable;
 
 public interface SettingService {
 
+    /**
+     * 取得服务器个人信息
+     *
+     * @return
+     */
     @GET(ApiConstants.SETTING_PERSON_INFO_PATH)
     Observable<HttpResponseEntity<SettingPersonInfoBean>> getPersonInfo();
 }

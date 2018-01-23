@@ -32,11 +32,20 @@ import rx.schedulers.Schedulers;
 
 
 /**
- * Created by Jane on 2018/1/22.
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
  */
+
 
 public class HttpManager<T, T1, T2> {
     private static final String TAG = HttpManager.class.getSimpleName();
+    /**
+     * 最大缓存
+     */
+    public static final int MAX_CACHE_SIZE = 1000 * 1000 * 50;
 
 
     public OkHttpClient getOkhttpClient(Context context, Interceptor interceptor) {
@@ -46,8 +55,7 @@ public class HttpManager<T, T1, T2> {
         } else {
             loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
         }
-        long maxCacheSize = 1000 * 1000 * 50;
-        Cache cache = new Cache(CacheUtils.getOkHttpFile(context), maxCacheSize);
+        Cache cache = new Cache(CacheUtils.getOkHttpFile(context), MAX_CACHE_SIZE);
         OkHttpClient.Builder builder = null;
         try {
             InputStream is = null;

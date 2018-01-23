@@ -12,13 +12,23 @@ import java.io.IOException;
 import static android.os.Environment.MEDIA_MOUNTED;
 
 /**
- * Created by scott_he on 16/10/17.
  * 缓存和文件目录位置
+ *
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
  */
+
 
 public class CacheUtils {
 
-    //SD卡是否存在
+    /**
+     * SD卡是否存在
+     *
+     * @return
+     */
     public static boolean isSDCardExsit() {
         String state = Environment.getExternalStorageState();
         if (state == null) return false;
@@ -40,7 +50,13 @@ public class CacheUtils {
     }
 
 
-    //录音文件存放位置
+    /**
+     * 录音文件存放位置
+     *
+     * @param context
+     *
+     * @return
+     */
     public static String getRecoderDiskFileDir(Context context) {
         String cachePath = null;
         if (isSDCardExsit()) {
@@ -52,7 +68,13 @@ public class CacheUtils {
     }
 
 
-    //马赛克图片文件存放位置
+    /**
+     * 马赛克图片文件存放位置
+     *
+     * @param context
+     *
+     * @return
+     */
     public static String getMosickDiskFileDir(Context context) {
         String cachePath = null;
         if (isSDCardExsit()) {
@@ -64,7 +86,13 @@ public class CacheUtils {
     }
 
 
-    //获得裁剪的存储位置
+    /**
+     * 获得裁剪的存储位置
+     *
+     * @param context
+     *
+     * @return
+     */
     public static String getUCropDiskFileDir(Context context) {
         String cachePath = null;
         if (isSDCardExsit()) {
@@ -144,7 +172,13 @@ public class CacheUtils {
         return appCacheDir;
     }
 
-    //是否有写权限
+    /**
+     * 是否有写权限
+     *
+     * @param context
+     *
+     * @return
+     */
     private static boolean hasExternalStoragePermission(Context context) {
         int perm = context.checkCallingOrSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE");
         return perm == PackageManager.PERMISSION_GRANTED;

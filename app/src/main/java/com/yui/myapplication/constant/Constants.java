@@ -1,10 +1,15 @@
 package com.yui.myapplication.constant;
 
 /**
- * author: heshantao
- * data: 2017/1/18.
  * 常量
+ *
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
  */
+
 
 public class Constants {
     //分页每页数量
@@ -578,7 +583,6 @@ public class Constants {
         public static final String INQUIRY_FAMILY_NAME = "family_name";
         public static final String INQUIRY_PATIENT_MOBILE = "patient_mobile";
         public static final int INQUIRY_REQUEST_ADD_PRESCRIBE_CODE = 0X00;
-
 
 
         /**

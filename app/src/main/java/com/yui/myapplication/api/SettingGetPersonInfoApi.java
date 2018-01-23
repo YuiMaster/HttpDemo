@@ -10,8 +10,15 @@ import retrofit2.Retrofit;
 import rx.Observable;
 
 /**
- * Created by Jane on 2018/1/22.
+ * 取得跟人信息的请求
+ *
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
  */
+
 public class SettingGetPersonInfoApi extends BaseApi<SettingPersonInfoBean> {
 
     @Inject

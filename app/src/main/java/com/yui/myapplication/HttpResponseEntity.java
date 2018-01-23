@@ -1,6 +1,9 @@
 package com.yui.myapplication;
 
 /**
+ * .
+ * http 返回实体封装
+ *
  * @author liaoyuhuan
  * @date on  2018/1/22
  * @email

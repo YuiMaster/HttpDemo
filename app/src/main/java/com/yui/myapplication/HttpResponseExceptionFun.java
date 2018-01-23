@@ -6,7 +6,13 @@ import rx.Observable;
 import rx.functions.Func1;
 
 /**
- * Created by Jane on 2018/1/22.
+ * http请求异常处理
+ *
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
  */
 
 public class HttpResponseExceptionFun<T> implements Func1<Throwable, Observable<T>> {

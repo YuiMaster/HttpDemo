@@ -12,8 +12,15 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 /**
- * Created by Jane on 2018/1/22.
+ * 业务请求头拦截器
+ *
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
  */
+
 
 public class YdbHeaderInterceptor implements Interceptor {
     Context mCxt;

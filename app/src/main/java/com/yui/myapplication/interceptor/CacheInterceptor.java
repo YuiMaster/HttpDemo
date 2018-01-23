@@ -11,9 +11,15 @@ import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
 
+
 /**
  * 缓存拦截器
- * Created by Jane on 2018/1/22.
+ *
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
  */
 
 
