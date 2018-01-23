@@ -24,6 +24,14 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
+/**
+ * @author liaoyuhuan
+ * @date on  2018/1/23
+ * @email
+ * @org
+ * @describe 添加描述
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     @Inject
@@ -66,10 +74,6 @@ public class MainActivity extends AppCompatActivity {
     public Observable doNormalHttp(BaseApi baseApi) {
         Observable observable = getObservable()
                 .retryWhen(new RetryWhenFun())
-//                .compose(mLifecycleProvider.bindUntilEvent(ActivityEvent.DESTROY))
-//                .compose(baseApi.getLifeProvider() instanceof Fragment ?
-//                        baseApi.getLifeProvider().bindUntilEvent(FragmentEvent.DESTROY) :
-//                        baseApi.getLifeProvider().bindUntilEvent(ActivityEvent.DESTROY))
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
