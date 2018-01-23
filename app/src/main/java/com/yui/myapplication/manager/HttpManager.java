@@ -49,16 +49,11 @@ public class HttpManager<T, T1, T2> {
 
 
     public OkHttpClient getOkhttpClient(Context context, Interceptor interceptor) {
-        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
-        if (true) {
-            loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        } else {
-            loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
-        }
         Cache cache = new Cache(CacheUtils.getOkHttpFile(context), MAX_CACHE_SIZE);
         OkHttpClient.Builder builder = null;
         try {
             InputStream is = null;
+            /**加密文件*/
             is = context.getResources().getAssets().open("server.cer");
 
             InputStream[] inputStreams = new InputStream[]{is};
@@ -69,9 +64,11 @@ public class HttpManager<T, T1, T2> {
                     /**session,cookie 持久化*/
                     .cookieJar(new PersistentCookieJar(new SetCookieCache(),
                             new SharedPrefsCookiePersistor(context)))
+                    /**添加请求拦截*/
                     .addInterceptor(new HeaderInterceptor(context))
                     /**缓存 okhttp3 本来是存在的不设置不起作用*/
                     .cache(cache)
+                    /**添加请求拦截 CacheInterceptor*/
                     .addInterceptor(new CacheInterceptor(context))
                     .sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager)
                     .addInterceptor(new HttpLoggingInterceptor())

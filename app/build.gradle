@@ -1,13 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
-        applicationId "com.yui.myapplication"
-        minSdkVersion 15
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        applicationId rootProject.ext.applicationId
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -22,30 +23,18 @@ android {
     dataBinding {
         enabled = true
     }
+    dexOptions {
+        /**解决库文件重复引用问题
+         * http://blog.csdn.net/onceing/article/details/51792422
+         * */
+        preDexLibraries = false
+        javaMaxHeapSize "4g"
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    compile supportDependencies.appCompat
-    compile supportDependencies.design
-    compile supportDependencies.recyclerView
-    //retrofit
-    compile retrofitDependencies.retrofit
-    compile retrofitDependencies.gson
-    compile retrofitDependencies.rxAdapterJava
-    //okhttp
-    compile okhttpDependencies.okhttp
-    compile okhttpDependencies.logInteceptor
 
-    //dagger2
-    compile dagger2Dependencies.dagger2
-    annotationProcessor dagger2Dependencies.compiler
-    //cookie 管理
-    compile okhttpDependencies.cookie
-    //Rx
-    compile rxDependencies.java
-    compile rxDependencies.android
-    //Rxlife
-    compile rxLifeDependencies.life
-    compile rxLifeDependencies.components
+    /**编译子module*/
+    compile project(':libhttp')
 }

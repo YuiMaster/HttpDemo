@@ -24,4 +24,27 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compile supportDependencies.appCompat
+    compile supportDependencies.design
+    compile supportDependencies.recyclerView
+
+    //retrofit
+    compile retrofitDependencies.retrofit
+    compile retrofitDependencies.gson
+    compile retrofitDependencies.rxAdapterJava
+    //okhttp
+    compile okhttpDependencies.okhttp
+    compile okhttpDependencies.logInteceptor
+
+    //dagger2
+    compile dagger2Dependencies.dagger2
+    annotationProcessor dagger2Dependencies.compiler
+    //cookie 管理
+    compile okhttpDependencies.cookie
+    //Rx
+    compile rxDependencies.java
+    compile rxDependencies.android
+    //Rxlife
+    compile rxLifeDependencies.life
+    compile rxLifeDependencies.components
 }
