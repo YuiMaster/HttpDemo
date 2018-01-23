@@ -1,4 +1,4 @@
-package com.yui.myapplication;
+package com.yui.myapplication.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

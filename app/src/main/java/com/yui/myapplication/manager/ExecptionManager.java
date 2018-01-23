@@ -1,8 +1,11 @@
-package com.yui.myapplication;
+package com.yui.myapplication.manager;
 
 import android.net.ParseException;
 
 import com.google.gson.JsonParseException;
+import com.yui.myapplication.constant.Error;
+import com.yui.myapplication.execption.ApiExecption;
+import com.yui.myapplication.execption.ResponseException;
 
 import org.apache.http.conn.ConnectTimeoutException;
 import org.json.JSONException;

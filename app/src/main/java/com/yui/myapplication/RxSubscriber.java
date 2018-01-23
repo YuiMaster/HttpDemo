@@ -3,6 +3,7 @@ package com.yui.myapplication;
 import android.util.Log;
 
 import com.trello.rxlifecycle.LifecycleProvider;
+import com.yui.myapplication.api.BaseApi;
 
 import java.lang.ref.SoftReference;
 

@@ -1,5 +1,8 @@
 package com.yui.myapplication;
 
+import com.yui.myapplication.api.BaseApi;
+import com.yui.myapplication.manager.HttpManager;
+
 import rx.Observable;
 
 /**

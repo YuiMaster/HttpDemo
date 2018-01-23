@@ -1,5 +1,7 @@
 package com.yui.myapplication;
 
+import com.yui.myapplication.manager.ExecptionManager;
+
 import rx.Observable;
 import rx.functions.Func1;
 

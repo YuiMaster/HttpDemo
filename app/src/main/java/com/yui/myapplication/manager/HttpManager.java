@@ -1,4 +1,4 @@
-package com.yui.myapplication;
+package com.yui.myapplication.manager;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -8,7 +8,12 @@ import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
 import com.trello.rxlifecycle.android.ActivityEvent;
 import com.trello.rxlifecycle.android.FragmentEvent;
+import com.yui.myapplication.interceptor.CacheInterceptor;
+import com.yui.myapplication.HttpResponseExceptionFun;
+import com.yui.myapplication.RetryWhenFun;
+import com.yui.myapplication.api.BaseApi;
 import com.yui.myapplication.constant.Constants;
+import com.yui.myapplication.interceptor.HeaderInterceptor;
 import com.yui.myapplication.utils.CacheUtils;
 import com.yui.myapplication.utils.HttpsUtils;
 

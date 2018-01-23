@@ -1,5 +1,6 @@
 package com.yui.myapplication;
 
+import com.yui.myapplication.bean.SettingPersonInfoBean;
 import com.yui.myapplication.constant.ApiConstants;
 
 import retrofit2.http.GET;

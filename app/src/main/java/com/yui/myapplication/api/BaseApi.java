@@ -1,9 +1,12 @@
-package com.yui.myapplication;
+package com.yui.myapplication.api;
 
 import android.support.v7.app.AppCompatDialogFragment;
 
 import com.trello.rxlifecycle.LifecycleProvider;
+import com.yui.myapplication.HttpOnNextCallback;
+import com.yui.myapplication.HttpResponseEntity;
 import com.yui.myapplication.constant.Constants;
+import com.yui.myapplication.execption.ApiExecption;
 
 import java.lang.ref.SoftReference;
 

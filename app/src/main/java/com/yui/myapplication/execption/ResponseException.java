@@ -1,4 +1,4 @@
-package com.yui.myapplication;
+package com.yui.myapplication.execption;
 
 /**
  * Created by Jane on 2018/1/22.

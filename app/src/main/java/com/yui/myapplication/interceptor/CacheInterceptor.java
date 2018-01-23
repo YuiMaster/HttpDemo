@@ -1,4 +1,4 @@
-package com.yui.myapplication;
+package com.yui.myapplication.interceptor;
 
 import android.content.Context;
 

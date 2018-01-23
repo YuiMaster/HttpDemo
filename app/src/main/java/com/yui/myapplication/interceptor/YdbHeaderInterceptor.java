@@ -1,8 +1,9 @@
-package com.yui.myapplication;
+package com.yui.myapplication.interceptor;
 
 import android.content.Context;
 
 import com.yui.myapplication.constant.Constants;
+import com.yui.myapplication.utils.StringUtils;
 
 import java.io.IOException;
 

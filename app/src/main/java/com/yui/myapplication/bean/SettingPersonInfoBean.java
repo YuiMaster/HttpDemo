@@ -1,4 +1,4 @@
-package com.yui.myapplication;
+package com.yui.myapplication.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;

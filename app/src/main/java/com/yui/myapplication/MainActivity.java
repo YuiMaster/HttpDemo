@@ -7,7 +7,11 @@ import android.util.Log;
 
 import com.trello.rxlifecycle.LifecycleProvider;
 import com.trello.rxlifecycle.LifecycleTransformer;
+import com.yui.myapplication.api.BaseApi;
 import com.yui.myapplication.api.SettingGetPersonInfoApi;
+import com.yui.myapplication.bean.SettingPersonInfoBean;
+import com.yui.myapplication.interceptor.YdbHeaderInterceptor;
+import com.yui.myapplication.manager.HttpManager;
 
 import java.lang.ref.SoftReference;
 

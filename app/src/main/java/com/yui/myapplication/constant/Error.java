@@ -1,4 +1,4 @@
-package com.yui.myapplication;
+package com.yui.myapplication.constant;
 
 /**
  * author: heshantao
