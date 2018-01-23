@@ -36,6 +36,8 @@ android {
 }
 
 dependencies {
+    /**gradle 3.0里的implementation只能模块内访问，
+     * api就和2.3.3的compile一样*/
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile supportDependencies.appCompat
     compile supportDependencies.design
