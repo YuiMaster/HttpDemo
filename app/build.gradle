@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.yui.myapplication"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    /**由于从ANDROID SDK从API LEVEL 23开始去掉了http相关特性*/
+    useLibrary 'org.apache.http.legacy'
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compile supportDependencies.appCompat
+    compile supportDependencies.design
+    compile supportDependencies.recyclerView
+    //retrofit
+    compile retrofitDependencies.retrofit
+    compile retrofitDependencies.gson
+    compile retrofitDependencies.rxAdapterJava
+    //okhttp
+    compile okhttpDependencies.okhttp
+    compile okhttpDependencies.logInteceptor
+
+    //dagger2
+    compile dagger2Dependencies.dagger2
+    annotationProcessor dagger2Dependencies.compiler
+    //cookie 管理
+    compile okhttpDependencies.cookie
+    //Rx
+    compile rxDependencies.java
+    compile rxDependencies.android
+    //Rxlife
+    compile rxLifeDependencies.life
+    compile rxLifeDependencies.components
+}
