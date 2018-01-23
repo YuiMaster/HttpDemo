@@ -1,6 +1,7 @@
 package com.yui.myapplication.api;
 
 import com.trello.rxlifecycle.LifecycleProvider;
+import com.yui.libhttp.api.BaseApi;
 import com.yui.myapplication.bean.SettingPersonInfoBean;
 import com.yui.myapplication.SettingService;
 

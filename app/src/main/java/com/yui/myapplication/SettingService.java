@@ -1,7 +1,8 @@
 package com.yui.myapplication;
 
+import com.yui.libhttp.HttpResponseEntity;
 import com.yui.myapplication.bean.SettingPersonInfoBean;
-import com.yui.myapplication.constant.ApiConstants;
+import com.yui.libhttp.constant.ApiConstants;
 
 import retrofit2.http.GET;
 import rx.Observable;

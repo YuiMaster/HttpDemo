@@ -7,11 +7,15 @@ import android.util.Log;
 
 import com.trello.rxlifecycle.LifecycleProvider;
 import com.trello.rxlifecycle.LifecycleTransformer;
-import com.yui.myapplication.api.BaseApi;
+import com.yui.libhttp.HttpResponseExceptionFun;
+import com.yui.libhttp.RetryWhenFun;
+import com.yui.libhttp.RxSubscriber;
+import com.yui.libhttp.api.BaseApi;
+import com.yui.libhttp.callback.HttpOnNextCallback;
 import com.yui.myapplication.api.SettingGetPersonInfoApi;
 import com.yui.myapplication.bean.SettingPersonInfoBean;
-import com.yui.myapplication.interceptor.YdbHeaderInterceptor;
-import com.yui.myapplication.manager.HttpManager;
+import com.yui.libhttp.interceptor.YdbHeaderInterceptor;
+import com.yui.libhttp.manager.HttpManager;
 
 import java.lang.ref.SoftReference;
 

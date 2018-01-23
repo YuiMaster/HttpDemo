@@ -20,6 +20,9 @@ android {
 
     /**由于从ANDROID SDK从API LEVEL 23开始去掉了http相关特性*/
     useLibrary 'org.apache.http.legacy'
+    lintOptions {
+        abortOnError false
+    }
     dataBinding {
         enabled = true
     }
@@ -33,8 +36,16 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile supportDependencies.appCompat
+    compile supportDependencies.design
+    compile supportDependencies.recyclerView
+    //dagger2
+    compile dagger2Dependencies.dagger2
+    annotationProcessor dagger2Dependencies.compiler
+    //Rx
+    compile rxDependencies.java
+    compile rxDependencies.android
     /**编译子module*/
     compile project(':libhttp')
 }
