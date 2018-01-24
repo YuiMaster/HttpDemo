@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,4 +11,23 @@
         android:layout_height="wrap_content"
         android:text="Hello World!"/>
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        style="@style/inquiry_checkbox_style"
+        android:background="@drawable/bg_radiobutton"
+        tools:checked="true"
+        tools:layout_height="wrap_content"
+        tools:layout_width="wrap_content"
+        />
+
+    <RadioButton
+        style="@style/inquiry_radiobutton_style"
+        android:background="@drawable/bg_radiobutton"
+        tools:checked="true"
+        tools:layout_height="wrap_content"
+        tools:layout_width="wrap_content"/>
+</LinearLayout>
