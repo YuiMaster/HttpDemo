@@ -2,10 +2,14 @@ package com.yui.myapplication;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatCheckBox;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RadioButton;
 
 import com.trello.rxlifecycle.LifecycleProvider;
 import com.trello.rxlifecycle.LifecycleTransformer;
@@ -49,15 +53,22 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     SettingGetPersonInfoApi mSettingGetPersonInfoApi;
 
+    AppCompatCheckBox mRadioButton;
+    AppCompatCheckBox mRadioButto2n;
+    private boolean check = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button button = (Button) findViewById(R.id.btn1);
+        mRadioButton = (AppCompatCheckBox)findViewById(R.id.radio) ;
+        mRadioButto2n = (AppCompatCheckBox)findViewById(2);
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                check = !check;
+                mRadioButton.setChecked(check);
             }
         });
         httpManager = new HttpManager();

@@ -30,4 +30,14 @@
         tools:checked="true"
         tools:layout_height="wrap_content"
         tools:layout_width="wrap_content"/>
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/radio"
+        android:background="@drawable/bg_inquiry_expand_arrow"
+        android:button="@null"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:checked="false"
+        tools:checked="false"
+        />
 </LinearLayout>
